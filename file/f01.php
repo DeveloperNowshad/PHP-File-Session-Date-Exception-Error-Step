@@ -1,7 +1,12 @@
 <?php
-$filename = "\\Ostad\\module-6\\file\\data\\f1.txt";
+$filename = "data/f1.txt";
+if (is_readable($filename)) {
+    $fp = fopen($filename, 'r');
 
-$fp = fopen($filename, 'r');
-$line = fgets($fp, 6);
-echo $line;
-fclose($fp);
+    while ($line = fgets($fp)) {
+        echo $line;
+    }
+    // $line = fgets($fp, 6);
+    // echo $line;
+    fclose($fp);
+}
