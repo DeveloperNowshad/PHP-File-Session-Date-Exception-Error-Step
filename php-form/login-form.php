@@ -1,5 +1,4 @@
 <?php
-set_ini("display_errors",0);
 session_start([
     'cookie_lifetime' => 300,
 ]);
@@ -68,6 +67,7 @@ if (isset($POST['username']) && isset($_POST['password'])) {
                 <?php else :
                 ?>
                     <form action="login-form.php?logout=true" method="post">
+                        <input type="hidden" name="logout" value="1">
                         <button type="submit" class="button-primary" name="submit">Log Out</button>
                     </form>
                 <?php endif; ?>
